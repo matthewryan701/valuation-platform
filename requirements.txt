@@ -1,0 +1,14 @@
+pandas
+numpy
+scikit-learn
+sqlalchemy
+psycopg2-binary
+matplotlib
+plotly
+streamlit
+xgboost
+shap
+yfinance
+requests
+python-dotenv
+openai
