@@ -12,3 +12,4 @@ yfinance
 requests
 python-dotenv
 openai
+supabase
