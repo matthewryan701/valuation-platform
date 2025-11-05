@@ -15,14 +15,13 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def get_sp500_tickers():
-    """Fetch S&P 500 tickers from Wikipedia manually."""
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
     response = requests.get(url, headers=headers)
     tables = pd.read_html(response.text)
     df = tables[0]
     tickers = df['Symbol'].tolist()
-    tickers = [t.replace(".", "-") for t in tickers]  # Match yfinance format
+    tickers = [t.replace(".", "-") for t in tickers]  
     return tickers
 
 def fetch_multiple_stocks(tickers, period="5y"):
